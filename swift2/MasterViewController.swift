@@ -12,7 +12,8 @@ import CoreData
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var managedObjectContext: NSManagedObjectContext? = nil
-
+    
+    var possibleInt:Int = 16;
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +26,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
+        
+        if let x = possibleInt
+        {
+            println("possible int: \(x)")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
